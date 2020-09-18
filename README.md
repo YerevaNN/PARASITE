@@ -1,4 +1,6 @@
 # parasite
+<img src="parasite.svg" width="300"> 
+
 A parallel sentence preprocessing toolkit
 
 # Interface
