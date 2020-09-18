@@ -1,0 +1,12 @@
+torch==1.5.0a0+8f84ded
+fire==0.3.1
+syntok==1.3.1
+tabulate==0.8.7
+transformers==2.11.0
+overrides==3.1.0
+spacy==2.3.0
+razdel==0.5.0
+registrable==0.0.4
+numpy==1.18.1
+tqdm==4.31.1
+scikit_learn==0.23.2
