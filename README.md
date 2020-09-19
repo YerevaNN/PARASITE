@@ -10,6 +10,24 @@ The module `parasite.pipeline` implements CLI over all the basic concepts of the
 
 We recommend using `AlignedBiText from_files` for working with a single bi-text document or `AlignedBiText batch_from_files` to work with multiple files.
 
+# Results
+Here is effect of using different components as part of preprocessing, filtering and monotonic alignments pipeline.
+
+All the numers represent the BLEU score on WMT20 MEDLINE (local test) set of the very same model train using different data preprocessing configurations.
+
+| **Model**                       | **en → ru** | **ru → en** |
+|---------------------------------|:-----------:|:-----------:|
+| baseline configuration          | 30.7        | 31.3        |
+| \+ greedy alignments            | 30.1        | 31.8        |
+| \+ detect subsection names      | 30.7        | 32.3        |
+| \+ remove titles                | 31.3        | **32.5**    |
+| \+ optimize total similarity    | 30.4        | 32.2        |
+| \+ normalize distance matrix    | 30.8        | 32.1        |
+| \+ penalize source/target ratio | 31.2        | 31.5        |
+| \+ one-to-many (K=3)            | **32.2**    | 32.3        |
+
+
+
 # Example
 
 To replicate our **best submission (run 2)** (WMT20 Biomedical Translation Task winner models for `en-ru` language pair) preprocessing, please run:
