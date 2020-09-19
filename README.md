@@ -29,7 +29,7 @@ python -m parasite.pipeline \
     - apply aligner dynamic \
         --max-k=3 --penalty-ratio=2 --distance=euclidean --normalize=True \
     --progress \
-    - split --mapping-path="/datasets/wmt20.biomed.ru-en.medline_train/splits.txt" \
+    - split --mapping-path="examples/wmt20.biomed.ru-en.medline_train.yerevann.splits.txt" \
     - to_files --output-dir="/datasets/wmt20.biomed.ru-en.medline_train/preprocessed_files"
 
 ```
