@@ -12,8 +12,28 @@ We recommend using `AlignedBiText from_files` for working with a single bi-text 
 
 # Example
 
-In order to replicate our best preprocessing for 
-*WMT20 Biomedical Translation Task winner model*, you can run:
+To replicate our **best submission (run 2)** (WMT20 Biomedical Translation Task winner models for `en-ru` language pair) preprocessing, please run:
+
+```sh
+python -m parasite.pipeline \
+    AlignedBiText batch_from_files /datasets/wmt20.biomed.ru-en.medline_train/raw_files/*_en.txt \
+        --suffix=".txt" --src-lang="en" --tgt-lang="ru" \
+    - apply segmenter reset \
+    - apply segmenter scispacy --only-src \
+    - apply segmenter razdel --only-tgt \
+    - apply segmenter remove-title --only-tgt --blacklist='Резюме' \
+    - apply segmenter keyword --only-src --path='examples/medline_keywords/eng_few.txt' \
+    - apply segmenter keyword --only-tgt --path='examples/medline_keywords/rus_few.txt' \
+    - apply segmenter remove-title --only-src \
+    - apply encoder pretrained-transformer "xlm-roberta-large" \
+        --normalize=2 --force-lowercase --normalize-length=avg --fp16 \
+    - apply aligner greedy-one2one --distance=euclidean \
+    --progress \
+    - split --mapping-path="examples/wmt20.biomed.ru-en.medline_train.yerevann.splits.txt" \
+    - to_files --output-dir="/datasets/wmt20.biomed.ru-en.medline_train/preprocessed_files"
+```
+
+In order to replicate our **overall best preprocessing (not submitted, described in the paper)**, you can run:
 ```sh
 python -m parasite.pipeline \
     AlignedBiText batch_from_files /datasets/wmt20.biomed.ru-en.medline_train/raw_files/*_en.txt \
