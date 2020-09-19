@@ -26,6 +26,9 @@ All the numers represent the BLEU score on WMT20 MEDLINE (local test) set of the
 | \+ penalize source/target ratio | 31.2        | 31.5        |
 | \+ one-to-many (K=3)            | **32.2**    | 32.3        |
 
+Here are training graphs for **en → ru**, averaged across different runs. The best configuration shows *significantly better* results:
+
+<img src="graphs.png" width="900"> 
 
 
 # Example
