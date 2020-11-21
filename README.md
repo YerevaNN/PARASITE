@@ -13,7 +13,7 @@ We recommend using `AlignedBiText from_files` for working with a single bi-text 
 # Results
 Here is effect of using different components as part of preprocessing, filtering and monotonic alignments pipeline.
 
-All the numers represent the BLEU score on WMT20 MEDLINE (local test) set of the very same model train using different data preprocessing configurations.
+All the numbers represent the BLEU score on the WMT20 MEDLINE (local test) set for different data preprocessing configurations (and the exact same architecture and learning parameters).
 
 | **Model**                       | **en → ru** | **ru → en** |
 |---------------------------------|:-----------:|:-----------:|
