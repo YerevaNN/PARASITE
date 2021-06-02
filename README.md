@@ -74,3 +74,21 @@ python -m parasite.pipeline \
     - to_files --output-dir="/datasets/wmt20.biomed.ru-en.medline_train/preprocessed_files"
 
 ```
+
+# Citation
+In order to cite our work, please consider the following BibTeX:
+```
+@inproceedings{hambardzumyan-etal-2020-yerevanns,
+    title = "{Y}ereva{NN}{'}s Systems for {WMT}20 Biomedical Translation Task: The Effect of Fixing Misaligned Sentence Pairs",
+    author = "Hambardzumyan, Karen  and
+      Tamoyan, Hovhannes  and
+      Khachatrian, Hrant",
+    booktitle = "Proceedings of the Fifth Conference on Machine Translation",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.wmt-1.88",
+    pages = "820--825",
+}
+```
